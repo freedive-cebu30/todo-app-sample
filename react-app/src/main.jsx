@@ -1,27 +1,27 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Todo as Process1Todo } from './process_1/Todo.jsx';
-import { Todo as Process2Todo } from './process_2/Todo.jsx';
-import { Todo as Process3Todo } from './process_3/Todo.jsx';
-import { Todo as Process4Todo } from './process_4/Todo.jsx';
-import { Todo as Process5Todo } from './process_5/Todo.jsx';
-import { Todo as Process6Todo } from './process_6/Todo.jsx';
-import { Todo as Process7Todo } from './process_7/Todo.jsx';
-import { Todo as Process8Todo } from './process_8/Todo.jsx';
-import { Todo as Process9Todo } from './process_9/Todo.jsx';
-import { Todo as Process10Todo } from './process_10/Todo.jsx';
+// import { Todo as Process2Todo } from './process_2/Todo.jsx';
+// import { Todo as Process3Todo } from './process_3/Todo.jsx';
+// import { Todo as Process4Todo } from './process_4/Todo.jsx';
+// import { Todo as Process5Todo } from './process_5/Todo.jsx';
+// import { Todo as Process6Todo } from './process_6/Todo.jsx';
+// import { Todo as Process7Todo } from './process_7/Todo.jsx';
+// import { Todo as Process8Todo } from './process_8/Todo.jsx';
+// import { Todo as Process9Todo } from './process_9/Todo.jsx';
+// import { Todo as Process10Todo } from './process_10/Todo.jsx';
 
 const COMPONENT_MAP = {
   process1: Process1Todo,
-  process2: Process2Todo,
-  process3: Process3Todo,
-  process4: Process4Todo,
-  process5: Process5Todo,
-  process6: Process6Todo,
-  process7: Process7Todo,
-  process8: Process8Todo,
-  process9: Process9Todo,
-  process10: Process10Todo,
+  // process2: Process2Todo,
+  // process3: Process3Todo,
+  // process4: Process4Todo,
+  // process5: Process5Todo,
+  // process6: Process6Todo,
+  // process7: Process7Todo,
+  // process8: Process8Todo,
+  // process9: Process9Todo,
+  // process10: Process10Todo,
 };
 
 const params = new URLSearchParams(window.location.search);
