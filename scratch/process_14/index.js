@@ -14,7 +14,6 @@ const onClickAddTodo = () => {
   createTodoItem(inputText);
 };
 
-// ドラッグイベントを登録する関数
 const registerDragEvents = (li, type) => {
   li.setAttribute('draggable', 'true');
   li.addEventListener('dragstart', (event) => {
@@ -74,6 +73,7 @@ const createTodoItem = (inputText) => {
 
 const createCompleteTodoItem = (text) => {
   const completeLi = document.createElement('li');
+  registerDragEvents(completeLi, 'complete');
   const completeDiv = document.createElement('div');
   const completeP = document.createElement('p');
   completeP.innerText = text;
@@ -93,7 +93,6 @@ const createCompleteTodoItem = (text) => {
   return completeLi;
 };
 
-// ドロップを許可するための処理
 const allowDrop = (event) => event.preventDefault();
 
 // 完了側にドロップされたときの処理
@@ -108,10 +107,27 @@ const handleDropToComplete = (event) => {
   draggedContext = null;
 };
 
-// ドロップ可能な領域をdivとulの双方に設定
+// 未完了側にドロップされたときの処理
+const handleDropToIncomplete = (event) => {
+  event.preventDefault();
+  if (!draggedContext || draggedContext.type !== 'complete') return;
+  const text = draggedContext.element.querySelector('p').innerText;
+  if (draggedContext.element.parentElement === completeList) {
+    completeList.removeChild(draggedContext.element);
+  }
+  createTodoItem(text);
+  draggedContext = null;
+};
+
+// ドロップ可能な領域をdivとulの双方に設定 完了側
 [completeArea, completeList].forEach((target) => {
   target.addEventListener('dragover', allowDrop);
   target.addEventListener('drop', handleDropToComplete);
+});
+// ドロップ可能な領域をdivとulの双方に設定 未完了側
+[incompleteArea, incompleteList].forEach((target) => {
+  target.addEventListener('dragover', allowDrop);
+  target.addEventListener('drop', handleDropToIncomplete);
 });
 
 // 追加ボタン（id="add_button"）をクリックしたら onClickAddTodo() を実行

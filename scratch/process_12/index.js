@@ -69,4 +69,4 @@ const createTodoItem = (inputText) => {
 }
 
 // 追加ボタン（id="add_button"）をクリックしたら onClickAddTodo() を実行
-const addbutton = document.getElementById('add_button').addEventListener('click', () => onClickAddTodo());
+document.getElementById('add_button').addEventListener('click', () => onClickAddTodo());

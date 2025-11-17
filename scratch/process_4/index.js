@@ -6,4 +6,4 @@ const onClickAddTodo = () => {
 
 // HTML 上の「追加」ボタン（id="add_button"）を取得し、
 // クリックイベントが発生したら onClickAddTodo を実行する
-const addbutton = document.getElementById('add_button').addEventListener('click', () => onClickAddTodo());
+document.getElementById('add_button').addEventListener('click', () => onClickAddTodo());

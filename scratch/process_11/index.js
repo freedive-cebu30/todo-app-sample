@@ -38,6 +38,7 @@ const createTodoItem = (inputText) => {
     const returnTocompleteButton = document.createElement('button');
     returnTocompleteButton.innerText = "元に戻す";
     returnTocompleteButton.classList.add("btn-incomplete");
+    // 元に戻すボタンの実装
     returnTocompleteButton.addEventListener('click', () => {
       const returnTarget = returnTocompleteButton.closest("li");
       document.querySelector('.complete-area ul').removeChild(returnTarget);
@@ -69,4 +70,4 @@ const createTodoItem = (inputText) => {
 }
 
 // 追加ボタン（id="add_button"）をクリックしたら onClickAddTodo() を実行
-const addbutton = document.getElementById('add_button').addEventListener('click', () => onClickAddTodo());
+document.getElementById('add_button').addEventListener('click', () => onClickAddTodo());
