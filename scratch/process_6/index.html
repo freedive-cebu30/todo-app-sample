@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <title>TODO</title>
+  </head> 
+<body>
+  <p>テキストに値を入れて追加を押すと、未完了リストに表示される</p>
+  <div class="input-area">
+    <input type="text" id="add_text" placeholder="TODOを入れて下さい" />
+    <button id="add_button">追加</button>
+  </div>
+  <div class="incomplete-area area-box">
+    <p>未完了</p>
+    <ul>
+      <li>
+        <div>
+          <p>TODO例</p>
+          <button class="btn-complete">完了</button>
+          <button class="btn-delete ">削除</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="complete-area area-box">
+    <p>完了</p>
+    <ul>
+      <li>
+        <div>
+          <p>TODO例</p>
+          <button>元に戻す</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
