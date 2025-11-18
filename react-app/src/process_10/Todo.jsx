@@ -54,7 +54,7 @@ export const Todo = () => {
 
   return (
     <>
-      <p>未完了のTODOを完了に移動できます</p>
+      <p>未完了のTODOをドラッグ＆ドロップで完了に移動できます</p>
       <div className="input-area">
         <input
           type="text"
