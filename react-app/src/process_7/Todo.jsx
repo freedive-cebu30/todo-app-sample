@@ -12,7 +12,7 @@ export const Todo = () => {
   };
 
   // 未完了リストの削除ボタンが押されたときに呼ばれる関数
-  // 未完了リストの末尾の要素を削除して、setTodosで状態を更新しています
+  // 未完了リストのインデックスを受け取って、そのインデックスの要素を削除しています
   const onClickDelete = (targetIndex) => {
     const newTodos = [...todos];
     newTodos.splice(targetIndex, 1);

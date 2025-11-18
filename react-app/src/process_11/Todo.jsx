@@ -27,6 +27,8 @@ export const Todo = () => {
     setCompleteTodos((prev) => [...prev, removedValue]);
   };
 
+  // 元に戻すボタンが押されたときに呼ばれる関数
+  // 完了リストの末尾の要素を未完了リストに移動しています
   const onClickReturn = (targetIndex) => {
     const newCompleteTodos = [...completeTodos];
     const [returnedValue] = newCompleteTodos.splice(targetIndex, 1);
@@ -50,11 +52,20 @@ export const Todo = () => {
     onClickComplete(payload.index);
   };
 
+  const handleDropToIncomplete = (event) => {
+    event.preventDefault();
+    const data = event.dataTransfer.getData('text/plain');
+    if (!data) return;
+    const payload = JSON.parse(data);
+    if (payload.type !== 'complete') return;
+    onClickReturn(payload.index);
+  };
+
   const allowDrop = (event) => event.preventDefault();
 
   return (
     <>
-      <p>未完了のTODOを完了に移動できます</p>
+      <p>「元に戻す」を押すと、未完了に移動する</p>
       <div className="input-area">
         <input
           type="text"
@@ -67,7 +78,11 @@ export const Todo = () => {
           追加
         </button>
       </div>
-      <div className="incomplete-area area-box">
+      <div
+        className="incomplete-area area-box"
+        onDragOver={allowDrop}
+        onDrop={handleDropToIncomplete}
+      >
         <p>未完了</p>
         <ul>
           {todos.map((todo, index) => (
@@ -103,7 +118,11 @@ export const Todo = () => {
         <p>完了</p>
         <ul>
           {completeTodos.map((todo, index) => (
-            <li key={`${todo}-${index}`}>
+            <li
+              key={`${todo}-${index}`}
+              draggable
+              onDragStart={handleDragStart('complete', index)}
+            >
               <div>
                 <p>{todo}</p>
                 <button
