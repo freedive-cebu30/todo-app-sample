@@ -1,6 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Todo as Process1Todo } from './process_1/Todo.jsx';
+// 章が進むごとに下記のコメントを外すようにして下さい。
+// 2章ならば、7行目と20行目の先頭にある「//」を外して下さい。
+
 // import { Todo as Process2Todo } from './process_2/Todo.jsx';
 // import { Todo as Process3Todo } from './process_3/Todo.jsx';
 // import { Todo as Process4Todo } from './process_4/Todo.jsx';
