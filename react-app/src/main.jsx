@@ -14,6 +14,7 @@ import { Todo as Process1Todo } from './process_1/Todo.jsx';
 // import { Todo as Process9Todo } from './process_9/Todo.jsx';
 // import { Todo as Process10Todo } from './process_10/Todo.jsx';
 // import { Todo as Process11Todo } from './process_11/Todo.jsx';
+// import { Todo as Process12Todo } from './process_12/Todo.jsx';
 
 const COMPONENT_MAP = {
   process1: Process1Todo,
@@ -27,6 +28,7 @@ const COMPONENT_MAP = {
   // process9: Process9Todo,
   // process10: Process10Todo,
   // process11: Process11Todo,
+  // process12: Process12Todo,
 };
 
 const params = new URLSearchParams(window.location.search);
